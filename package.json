@@ -1,10 +1,10 @@
 {
-    "name": "syntax-highlighter",
-    "displayName": "Syntax Highlighter",
-    "description": "Syntax highlighting based on Tree-sitter",
-    "homepage": "https://github.com/EvgeniyPeshkov/syntax-highlighter",
-    "version": "0.4.1",
-    "publisher": "evgeniypeshkov",
+    "name": "pkm-syntax-highlighter",
+    "displayName": "PKM Syntax Highlighter",
+    "description": "PKM Syntax highlighting based on Tree-sitter and forked from https://github.com/EvgeniyPeshkov/syntax-highlighter",
+    "homepage": "https://github.com/Aggharta/syntax-highlighter",
+    "version": "0.0.1",
+    "publisher": "jatzeklazar",
     "license": "MIT",
     "icon": "images/syntax.png",
     "galleryBanner": {
@@ -12,11 +12,10 @@
         "theme": "dark"
     },
     "repository": {
-        "url": "https://github.com/EvgeniyPeshkov/syntax-highlighter"
+        "url": "https://github.com/Aggharta/syntax-highlighter"
     },
     "author": {
-        "name": "Evgeniy Peshkov",
-        "email": "peshkov.e@outlook.com"
+        "name": "Jatzek Lazar"
     },
     "categories": [
         "Programming Languages",
@@ -31,40 +30,13 @@
         "Coloring",
         "Tree-Sitter",
         "Parser",
-        "C",
-        "C++",
-        "CPP",
-        "Python",
-        "TypeScript",
-        "TS",
-        "TypeScriptReact",
-        "TSX",
-        "JavaScript",
-        "JS",
-        "Go",
-        "Rust",
-        "Php",
-        "Ruby",
-        "ShellScript",
-        "Bash",
-        "Lua"
+        "PKM"
     ],
     "engines": {
         "vscode": "^1.15.0"
     },
     "activationEvents": [
-        "onLanguage:c",
-        "onLanguage:cpp",
-        "onLanguage:python",
-        "onLanguage:typescript",
-        "onLanguage:typescriptreact",
-        "onLanguage:javascript",
-        "onLanguage:go",
-        "onLanguage:rust",
-        "onLanguage:php",
-        "onLanguage:ruby",
-        "onLanguage:shellscript",
-        "onLanguage:lua"
+        "onLanguage:pkm"
     ],
     "main": "./out/extension.js",
     "scripts": {
@@ -76,30 +48,103 @@
     },
     "dependencies": {
         "jsonc-parser": "^2.2.0",
-        "web-tree-sitter": "^0.15.10"
+        "nan": "^2.14.0",
+        "web-tree-sitter": "^0.16.0"
     },
     "devDependencies": {
-        "@types/node": "^12.7.2",
-        "@types/vscode": "1.15.0",
-        "tslint": "^5.20.0",
-        "typescript": "^3.6.4",
-        "vsce": "^1.68.0",
-        "tree-sitter": "^0.15.13",
-        "tree-sitter-cli": "^0.15.12",
-        "tree-sitter-cpp": "^0.15.0",
-        "tree-sitter-c": "^0.15.2",
-        "tree-sitter-python": "^0.15.0",
-        "tree-sitter-typescript": "^0.15.1",
-        "tree-sitter-javascript": "^0.15.1",
-        "tree-sitter-go": "^0.15.0",
-        "tree-sitter-rust": "^0.15.1",
-        "tree-sitter-php": "^0.13.1",
-        "tree-sitter-ruby": "^0.15.2",
-        "tree-sitter-bash": "^0.16.0",
-        "tree-sitter-lua": "^1.6.0"
+        "@types/node": "^11.10.0",
+        "@types/vscode": "1.41.0",
+        "tree-sitter": "^0.16.0",
+        "tree-sitter-cli": "^0.16.2",
+        "tree-sitter-pkm": "0.0.2",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "vsce": "^1.71.0",
+        "supports-color": "^5.5.0"
     },
     "contributes": {
+        "languages": [
+            {
+                "id": "pkm",
+                "extensions": [
+                    ".pkm",
+                    ".pkf"
+                ]
+            }
+        ],
         "colors": [
+            {
+                "id": "syntax.parameter",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#5d78ec",
+                    "light": "#5d78ec",
+                    "highContrast": "#5d78ec"
+                }
+            },
+            {
+                "id": "syntax.undefined",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#f12a55",
+                    "light": "#f12a55",
+                    "highContrast": "#f12a55"
+                }
+            },
+            {
+                "id": "syntax.number",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#168b2a",
+                    "light": "#168b2a",
+                    "highContrast": "#168b2a"
+                }
+            },
+            {
+                "id": "syntax.datetime",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#168b2a",
+                    "light": "#168b2a",
+                    "highContrast": "#168b2a"
+                }
+            },
+            {
+                "id": "syntax.object_reference",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#ff8c09",
+                    "light": "#ff8c09",
+                    "highContrast": "#ff8c09"
+                }
+            },
+            {
+                "id": "syntax.text",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#8eff72",
+                    "light": "#8eff72",
+                    "highContrast": "#8eff72"
+                }
+            },
+            {
+                "id": "syntax.boolean",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#13a700",
+                    "light": "#13a700",
+                    "highContrast": "#13a700"
+                }
+            },
+            {
+                "id": "syntax.comment",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#a3a3a3",
+                    "light": "#a3a3a3",
+                    "highContrast": "#a3a3a3"
+                }
+            },
             {
                 "id": "syntax.type",
                 "description": "Color for types (class, struct, enum)",
@@ -189,33 +234,6 @@
                     "light": "#7E57C2",
                     "highContrast": "#7E57C2"
                 }
-            },
-            {
-                "id": "syntax.control",
-                "description": "Color for control flow (if, continue, return)",
-                "defaults": {
-                    "dark": "#7986CB",
-                    "light": "#7986CB",
-                    "highContrast": "#7986CB"
-                }
-            },
-            {
-                "id": "syntax.operator",
-                "description": "Color for operators (+=, ->, ::)",
-                "defaults": {
-                    "dark": "#9575CD",
-                    "light": "#9575CD",
-                    "highContrast": "#9575CD"
-                }
-            },
-            {
-                "id": "syntax.modifier",
-                "description": "Color for modifiers (const, public, override)",
-                "defaults": {
-                    "dark": "#00897B",
-                    "light": "#00897B",
-                    "highContrast": "#00897B"
-                }
             }
         ],
         "configuration": {
@@ -230,18 +248,7 @@
                     "description": "Enabled languages",
                     "type": "array",
                     "default": [
-                        "c",
-                        "cpp",
-                        "python",
-                        "typescript",
-                        "typescriptreact",
-                        "javascript",
-                        "go",
-                        "rust",
-                        "php",
-                        "ruby",
-                        "shellscript",
-                        "lua"
+                        "pkm"
                     ]
                 },
                 "syntax.debugHover": {
