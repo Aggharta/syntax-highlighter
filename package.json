@@ -49,29 +49,19 @@
     "dependencies": {
         "jsonc-parser": "^2.2.0",
         "nan": "^2.14.0",
-        "web-tree-sitter": "^0.16.0"
+        "web-tree-sitter": "^0.15.11"
     },
     "devDependencies": {
         "@types/node": "^11.10.0",
         "@types/vscode": "1.41.0",
-        "tree-sitter": "^0.16.0",
-        "tree-sitter-cli": "^0.16.2",
-        "tree-sitter-pkm": "0.0.2",
+        "tree-sitter": "^0.15.11",
+        "tree-sitter-cli": "^0.15.11",
+        "tree-sitter-pkm": "0.0.7",
         "tslint": "^5.20.1",
         "typescript": "^3.7.4",
-        "vsce": "^1.71.0",
-        "supports-color": "^5.5.0"
+        "vsce": "^1.71.0"
     },
     "contributes": {
-        "languages": [
-            {
-                "id": "pkm",
-                "extensions": [
-                    ".pkm",
-                    ".pkf"
-                ]
-            }
-        ],
         "colors": [
             {
                 "id": "syntax.parameter",

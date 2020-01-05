@@ -1,0 +1,18 @@
+{
+    "simpleTerms": {
+        "function_name": "function",
+        "parameter": "variable",
+        "parameter_reference": "variable",
+        "undefined": "constant",
+        "boolean": "constant",
+        "text": "string",
+        "time": "constant",
+        "number": "number",
+        "date": "constant",
+        "point_of_time": "constant",
+        "object_reference": "type",
+        "time_span": "constant",
+        "comment": "comment"
+
+    }
+}
