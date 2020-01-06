@@ -3,7 +3,7 @@
     "displayName": "PKM Syntax Highlighter",
     "description": "PKM Syntax highlighting based on Tree-sitter and forked from https://github.com/EvgeniyPeshkov/syntax-highlighter",
     "homepage": "https://github.com/Aggharta/syntax-highlighter",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "jatzeklazar",
     "license": "MIT",
     "icon": "images/syntax.png",
@@ -49,19 +49,28 @@
     "dependencies": {
         "jsonc-parser": "^2.2.0",
         "nan": "^2.14.0",
-        "web-tree-sitter": "^0.15.11"
+        "web-tree-sitter": "^0.15.10"
     },
     "devDependencies": {
-        "@types/node": "^11.10.0",
-        "@types/vscode": "1.41.0",
-        "tree-sitter": "^0.15.11",
-        "tree-sitter-cli": "^0.15.11",
-        "tree-sitter-pkm": "0.0.7",
-        "tslint": "^5.20.1",
-        "typescript": "^3.7.4",
-        "vsce": "^1.71.0"
+        "@types/node": "^12.7.2",
+        "@types/vscode": "1.15.0",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.4",
+        "vsce": "^1.68.0",
+        "tree-sitter": "^0.15.13",
+        "tree-sitter-cli": "^0.15.12",
+        "tree-sitter-pkm": "0.0.7"
     },
     "contributes": {
+        "languages": [
+            {
+              "id": "pkm",
+              "extensions": [
+                ".pkm",
+                ".pkf"
+              ]
+            }
+          ],
         "colors": [
             {
                 "id": "syntax.parameter",
