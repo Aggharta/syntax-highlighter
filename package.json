@@ -3,7 +3,7 @@
     "displayName": "PKM Syntax Highlighter",
     "description": "PKM Syntax highlighting based on Tree-sitter and forked from https://github.com/EvgeniyPeshkov/syntax-highlighter",
     "homepage": "https://github.com/Aggharta/syntax-highlighter",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "jatzeklazar",
     "license": "MIT",
     "icon": "images/syntax.png",
@@ -103,7 +103,7 @@
                 "id": "syntax.datetime",
                 "description": "Color for types (class, struct, enum)",
                 "defaults": {
-                    "dark": "#168b2a",
+                    "dark": "#219c36",
                     "light": "#168b2a",
                     "highContrast": "#168b2a"
                 }
