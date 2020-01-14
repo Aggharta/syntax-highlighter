@@ -3,7 +3,7 @@
     "displayName": "PKM Syntax Highlighter",
     "description": "PKM Syntax highlighting based on Tree-sitter and forked from https://github.com/EvgeniyPeshkov/syntax-highlighter",
     "homepage": "https://github.com/Aggharta/syntax-highlighter",
-    "version": "0.0.4",
+    "version": "0.0.9",
     "publisher": "jatzeklazar",
     "license": "MIT",
     "icon": "images/syntax.png",
@@ -49,7 +49,7 @@
     "dependencies": {
         "jsonc-parser": "^2.2.0",
         "nan": "^2.14.0",
-        "web-tree-sitter": "^0.15.10"
+        "web-tree-sitter": "0.16.0"
     },
     "devDependencies": {
         "@types/node": "^12.7.2",
@@ -57,181 +57,129 @@
         "tslint": "^5.20.0",
         "typescript": "^3.6.4",
         "vsce": "^1.68.0",
-        "tree-sitter": "^0.15.13",
-        "tree-sitter-cli": "^0.15.12",
-        "tree-sitter-pkm": "0.0.7"
+        "tree-sitter": "^0.16.0",
+        "tree-sitter-cli": "^0.16.2",
+        "tree-sitter-pkm": "^0.0.10"
     },
     "contributes": {
         "languages": [
             {
-              "id": "pkm",
-              "extensions": [
-                ".pkm",
-                ".pkf"
-              ]
+                "id": "pkm",
+                "extensions": [
+                    ".pkv",
+                    ".pkfh",
+                    ".pkfs"
+                ],
+                "configuration": "./language-configuration.json"
             }
-          ],
+        ],
         "colors": [
-            {
-                "id": "syntax.parameter",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#5d78ec",
-                    "light": "#5d78ec",
-                    "highContrast": "#5d78ec"
-                }
-            },
-            {
-                "id": "syntax.undefined",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#f12a55",
-                    "light": "#f12a55",
-                    "highContrast": "#f12a55"
-                }
-            },
-            {
-                "id": "syntax.number",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#168b2a",
-                    "light": "#168b2a",
-                    "highContrast": "#168b2a"
-                }
-            },
-            {
-                "id": "syntax.datetime",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#219c36",
-                    "light": "#168b2a",
-                    "highContrast": "#168b2a"
-                }
-            },
-            {
-                "id": "syntax.object_reference",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#ff8c09",
-                    "light": "#ff8c09",
-                    "highContrast": "#ff8c09"
-                }
-            },
-            {
-                "id": "syntax.text",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#8eff72",
-                    "light": "#8eff72",
-                    "highContrast": "#8eff72"
-                }
-            },
-            {
-                "id": "syntax.boolean",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#13a700",
-                    "light": "#13a700",
-                    "highContrast": "#13a700"
-                }
-            },
-            {
-                "id": "syntax.comment",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#a3a3a3",
-                    "light": "#a3a3a3",
-                    "highContrast": "#a3a3a3"
-                }
-            },
-            {
-                "id": "syntax.type",
-                "description": "Color for types (class, struct, enum)",
-                "defaults": {
-                    "dark": "#26A69A",
-                    "light": "#26A69A",
-                    "highContrast": "#26A69A"
-                }
-            },
-            {
-                "id": "syntax.scope",
-                "description": "Color for scopes (namespace, module, outer class)",
-                "defaults": {
-                    "dark": "#00897B",
-                    "light": "#00897B",
-                    "highContrast": "#00897B"
-                }
-            },
             {
                 "id": "syntax.function",
                 "description": "Color for functions (function, method, interface)",
                 "defaults": {
-                    "dark": "#00BCD4",
-                    "light": "#00BCD4",
-                    "highContrast": "#00BCD4"
+                    "dark": "#DCDCAA",
+                    "light": "#F2AE49",
+                    "highContrast": "#a6e22e"
                 }
             },
             {
-                "id": "syntax.variable",
-                "description": "Color for variables (variable, field, property)",
+                "id": "syntax.parameter_declaration",
+                "description": "Color for parameter declarations",
                 "defaults": {
-                    "dark": "#42A5F5",
-                    "light": "#42A5F5",
+                    "dark": "#569CD6",
+                    "light": "#399EE6",
+                    "highContrast": "#5d78ec"
+                }
+            },
+            {
+                "id": "syntax.parameter_reference",
+                "description": "Color for references to parameter declarations",
+                "defaults": {
+                    "dark": "#9CDCFE",
+                    "light": "#399EE6",
                     "highContrast": "#42A5F5"
+                }
+            },
+            {
+                "id": "syntax.constant",
+                "description": "Color for types (class, struct, enum)",
+                "defaults": {
+                    "dark": "#C586C0",
+                    "light": "#A37ACC",
+                    "highContrast": "#ae81ff"
                 }
             },
             {
                 "id": "syntax.string",
                 "description": "Color for strings (string, regex, char)",
                 "defaults": {
-                    "dark": "#90A4AE",
-                    "light": "#90A4AE",
+                    "dark": "#CE9178",
+                    "light": "#86B300",
                     "highContrast": "#90A4AE"
                 }
             },
             {
                 "id": "syntax.number",
-                "description": "Color for numbers (10, 10.0f)",
+                "description": "Color for types (class, struct, enum)",
                 "defaults": {
-                    "dark": "#90A4AE",
-                    "light": "#90A4AE",
-                    "highContrast": "#90A4AE"
+                    "dark": "#C586C0",
+                    "light": "#A37ACC",
+                    "highContrast": "#ae81ff"
                 }
             },
             {
-                "id": "syntax.punctuation",
-                "description": "Color for punctuation (., :, {)",
+                "id": "syntax.object_reference",
+                "description": "Color for types (class, struct, enum)",
                 "defaults": {
-                    "dark": "#A1887F",
-                    "light": "#A1887F",
-                    "highContrast": "#A1887F"
+                    "dark": "#4EC9B0",
+                    "light": "#FA8D3E",
+                    "highContrast": "#66d9ef"
                 }
             },
             {
                 "id": "syntax.comment",
-                "description": "Color for comments",
+                "description": "Color for types (class, struct, enum)",
                 "defaults": {
-                    "dark": "#546E7A",
-                    "light": "#546E7A",
-                    "highContrast": "#546E7A"
+                    "dark": "#7FB785",
+                    "light": "#ABB0B6",
+                    "highContrast": "#75715e"
                 }
             },
             {
-                "id": "syntax.constant",
-                "description": "Color for constants (true, nullptr, nil)",
+                "id": "syntax.docstring",
+                "description": "Color for docstrings",
                 "defaults": {
-                    "dark": "#A89F9B",
-                    "light": "#A89F9B",
-                    "highContrast": "#A89F9B"
+                    "dark": "#7FB785",
+                    "light": "#1f6b01",
+                    "highContrast": "#047500"
                 }
             },
             {
-                "id": "syntax.directive",
-                "description": "Color for directives (#include, import, use)",
+                "id": "syntax.tag",
+                "description": "Color for tags",
                 "defaults": {
-                    "dark": "#7E57C2",
-                    "light": "#7E57C2",
-                    "highContrast": "#7E57C2"
+                    "dark": "#C586C0",
+                    "light": "#55B4D4",
+                    "highContrast": "#ffa640"
+                }
+            },
+            {
+                "id": "syntax.categorie",
+                "description": "Color for categories",
+                "defaults": {
+                    "dark": "#D16969",
+                    "light": "#E6BA7E",
+                    "highContrast": "#f92672"
+                }
+            },
+            {
+                "id": "syntax.type",
+                "description": "Color for datatypes",
+                "defaults": {
+                    "dark": "#4EC9B0",
+                    "light": "#FA8D3E",
+                    "highContrast": "#f92672"
                 }
             }
         ],

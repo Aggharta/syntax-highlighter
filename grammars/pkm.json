@@ -1,8 +1,8 @@
 {
     "simpleTerms": {
         "function_name": "function",
-        "parameter": "variable",
-        "parameter_reference": "variable",
+        "parameter": "parameter_declaration",
+        "parameter_reference": "parameter_reference",
         "undefined": "constant",
         "boolean": "constant",
         "text": "string",
@@ -10,9 +10,18 @@
         "number": "number",
         "date": "constant",
         "point_of_time": "constant",
-        "object_reference": "type",
+        "object_reference": "object_reference",
         "time_span": "constant",
-        "comment": "comment"
+        "comment": "comment",
+        "beschreibung": "docstring",
+        "signatur_tag": "tag",
+        "kategorie_tag": "tag",
+        "tag": "tag",
+        "kategorie": "categorie",
+        "datentyp": "type",
+        "standard_function_number": "type"
+
+
 
     }
 }
