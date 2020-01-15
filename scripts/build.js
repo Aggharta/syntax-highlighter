@@ -33,7 +33,15 @@ for (li of langs) {
     }
 
     console.log("Compiling " + lang + " parser");
-    exec("node_modules/.bin/tree-sitter build-wasm " + module,
+    var isWin = process.platform === "win32";
+    
+    if (isWin) {
+        var command = 'emcc -o ' + output + ' -Os -s WASM=1 -s SIDE_MODULE=1, -s TOTAL_MEMORY=33554432 -s NODEJS_CATCH_EXIT=0 -s EXPORTED_FUNCTIONS=["tree-sitter-' + lang + '"] -fno-exceptions -I ' + module + '\\src ' + module + '.\\src\\parser.c'
+    }
+    else{
+        var command = "node_modules/.bin/tree-sitter build-wasm " + module
+    }
+    exec(command,
         (err) => {
             if (err)
                 console.log("Failed to build wasm for " + lang + ": " + err.message);

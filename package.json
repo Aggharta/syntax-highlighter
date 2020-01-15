@@ -42,6 +42,7 @@
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "vscode:package": "node ./node_modules/.bin/vsce package",
+        "vscode:package-windows": ".\\node_modules\\.bin\\vsce.cmd package",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./scripts/build.js"
