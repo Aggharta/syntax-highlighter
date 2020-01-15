@@ -3,7 +3,7 @@
     "displayName": "PKM Syntax Highlighter",
     "description": "PKM Syntax highlighting based on Tree-sitter and forked from https://github.com/EvgeniyPeshkov/syntax-highlighter",
     "homepage": "https://github.com/Aggharta/syntax-highlighter",
-    "version": "0.0.9",
+    "version": "0.1.1",
     "publisher": "jatzeklazar",
     "license": "MIT",
     "icon": "images/syntax.png",
@@ -59,7 +59,7 @@
         "vsce": "^1.68.0",
         "tree-sitter": "^0.16.0",
         "tree-sitter-cli": "^0.16.2",
-        "tree-sitter-pkm": "^0.0.10"
+        "tree-sitter-pkm": "^0.1.1"
     },
     "contributes": {
         "languages": [

@@ -19,7 +19,8 @@
         "tag": "tag",
         "kategorie": "categorie",
         "datentyp": "type",
-        "standard_function_number": "type"
+        "standard_function_number": "type",
+        "jsdoc": "docstring"
 
 
 

@@ -139,7 +139,14 @@ export async function activate(context: vscode.ExtensionContext) {
     // Term colors
     const supportedTerms: string[] = [
         "type", "scope", "function", "variable", "number", "string", "comment",
-        "constant", "directive", "control", "operator", "modifier", "punctuation",
+        "constant", "parameter_declaration", 
+        "parameter_reference",
+        "constant",
+        "object_reference",
+        "docstring",
+        "tag",
+        "categorie",        
+        "directive", "control", "operator", "modifier", "punctuation",
     ];
     if (!vscode.workspace.getConfiguration("syntax").get("highlightComment"))
         supportedTerms.splice(supportedTerms.indexOf("comment"), 1);
